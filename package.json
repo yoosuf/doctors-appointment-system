@@ -1,0 +1,58 @@
+{
+  "name": "snapcrack",
+  "private": true,
+  "description": "snapcrack app",
+  "scripts": {
+    "bootstrap:client": "cd client && yarn install",
+    "bootstrap:server": "cd server && yarn install",
+    "bootstrap:worker": "cd server && yarn install",
+    "bootstrap": "yarn install && npm-run-all bootstrap:**",
+    "dev": "concurrently \"yarn run dev:server\"  \"yarn run dev:worker\"  \"yarn run dev:client\"",
+    "dev:server": "cd server && TZ=UTC yarn run dev",
+    "dev:worker": "cd worker && TZ=UTC yarn run dev",
+    "dev:client": "cd client && yarn run dev",
+    "start": "concurrently \"yarn run start:server\" \"yarn run start:worker\" \"yarn run start:client\"",
+    "start:server": "cd server && yarn run start",
+    "start:worker": "cd worker && yarn run start",
+    "start:client": "cd client && yarn run start",
+    "commit": "git-cz",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@sentry/browser": "^7.93.0",
+    "concurrently": "^8.2.2",
+    "country-telephone-data": "^0.6.3",
+    "react-phone-input-2": "^2.15.1",
+    "semantic-release": "^21.1.2",
+    "socket.io": "^4.7.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-conventional": "^17.8.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^10.0.4",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.6",
+    "@semantic-release/release-notes-generator": "^11.0.7",
+    "git-cz": "^4.9.0",
+    "husky": "^8.0.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.8.8"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/git"
+  ],
+  "repositoryUrl": "https://github.com/vinixglobal/snapcrack",
+  "release": {
+    "branches": [
+      "dev"
+    ]
+  }
+}

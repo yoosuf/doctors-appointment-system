@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* Override user agent stylesheet for input autofill */
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: var(--tw-bg-opacity) !important; /* Use Tailwind CSS color utilities */
+    color: var(--tw-text-opacity) !important; /* Use Tailwind CSS color utilities */
+}
+
+
+

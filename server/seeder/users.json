@@ -1,0 +1,78 @@
+[
+  {
+    "_id": "606c1f9616e3669692e7ec9e",
+    "isApproved": false,
+    "middleName": "Crack",
+    "firstName": "admin",
+    "lastName": "Test",
+    "email": "snapcrackadmin@yopmail.com",
+    "phone": "9925128487",
+    "fax": [
+      {
+        "faxNumber": "123456",
+        "countryCode": "+1",
+        "name": "F1",
+        "isDefault": true
+      }
+    ],
+    "phones": [
+      {
+        "phone": "9925128487",
+        "isApproved": true,
+        "name": "P1"
+      }
+    ],
+    "emails": [
+      {
+        "isApproved": true,
+        "countryCode": "+1",
+        "isVerified": true,
+        "isDefault": true,
+        "_id": "606c1f9616e3669692e7ec9f",
+        "email": "snapcrackadmin@yopmail.com",
+        "name": "Rudy Kozey DDS"
+      }
+    ],
+    "password": "admin123",
+
+    "roleId": "6076a62ba7a19ecb46ec717b"
+  },
+  {
+    "_id": "60b888715404310fa5e90784",
+    "isApproved": false,
+    "middleName": "Crack",
+    "firstName": "admin",
+    "lastName": "Test",
+    "email": "snapcrack@yopmail.com",
+    "phone": "11223456789",
+    "fax": [
+      {
+        "faxNumber": "123456",
+        "countryCode": "+1",
+        "name": "F1",
+        "isDefault": true
+      }
+    ],
+    "phones": [
+      {
+        "phone": "0123456789",
+        "isApproved": true,
+        "name": "P1"
+      }
+    ],
+    "emails": [
+      {
+        "isApproved": true,
+        "countryCode": "+1",
+        "isVerified": true,
+        "isDefault": true,
+        "_id": "61c984c186091b61f81a2013",
+        "email": "snapcrack@yopmail.com",
+        "name": "Rudy Kozey DDS"
+      }
+    ],
+    "password": "Snap@123",
+
+    "roleId": "6076a62ba7a19ecb46ec717b"
+  }
+]

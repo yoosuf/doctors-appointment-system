@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "5e327b04d31f0818e8b50dd1",
+    "name": "Admin",
+    "code": "ADMIN",
+    "weight": 1
+  },
+  {
+    "_id": "6076a62ba7a19ecb46ec717b",
+    "name": "super admin",
+    "code": "SUPER_ADMIN",
+    "weight": 1
+  },
+  {
+    "_id": "5f902cc6e0f4c5aef1cb7aec",
+    "name": "Owner",
+    "code": "OWNER",
+    "weight": 2
+  },
+  {
+    "_id": "5f902cc6e0f4c5aef1cb7778",
+    "name": "Sub_Owner",
+    "code": "SUB_OWNER",
+    "weight": 3
+  },
+  {
+    "_id": "5f902c9aecb6925b7f2951cf",
+    "name": "Chiropractor",
+    "code": "CHIROPRACTOR",
+    "weight": 4
+  },
+  {
+    "_id": "5f902c9ff9b3d94e06221592",
+    "name": "Staff",
+    "code": "STAFF",
+    "weight": 5
+  },
+  {
+    "_id": "5e3279da1d0b6718e8301656",
+    "name": "Patient",
+    "code": "PATIENT",
+    "weight": 6
+  },
+  {
+    "_id": "63de2906202c3f03ed1f1f88",
+    "name": "Nurse",
+    "code": "NURSE",
+    "weight": 7
+  }
+]

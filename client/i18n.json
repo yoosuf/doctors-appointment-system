@@ -1,0 +1,14 @@
+{
+  "locales": ["en"],
+  "defaultLocale": "en",
+  "localeDetection": false,
+  "pages": {
+    "/auth/login-with-phone": ["loginWithPhone"],
+    "/auth/login": ["loginWithPhone"],
+    "/auth/register": ["loginWithPhone"],
+    "/auth/forgot-password": ["loginWithPhone"],
+    "/auth/forgot-password-phone": ["loginWithPhone"],
+    "/auth/register-tell-more": ["loginWithPhone"],
+    "/customer-dashboard": ["loginWithPhone"]
+  }
+}

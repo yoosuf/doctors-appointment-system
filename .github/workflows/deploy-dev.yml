@@ -1,0 +1,36 @@
+name: Dev Server CI/CD
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Execute remote SSH commands and deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEV_HOST }} 
+          username: ${{ secrets.DEV_USERNAME }}
+          key: ${{ secrets.DEV_SSH_PRIVATE_KEY }}
+          port: ${{ secrets.DEV_PORT }}
+          script: |
+            cd /opt/apps/
+            git stash
+            git clean -fd
+            git pull --rebase origin dev 
+            # Execute yarn install for client
+            cd /opt/apps/client
+            yarn install
+            # Execute yarn install for server
+            cd /opt/apps/server
+            yarn install
+            pm2 restart all

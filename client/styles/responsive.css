@@ -1,0 +1,99 @@
+@media (max-width: 1536px) and (min-width: 1280px) {
+}
+@media (max-width: 1279px) and (min-width: 1024px) {
+}
+@media (max-width: 1023px) and (min-width: 768px) {
+}
+@media (max-width: 767px) and (min-width: 640px) {
+  .POS-sidebar {
+    position: absolute;
+    top: 0;
+    right: -1000px;
+    width: 100%;
+    height: 100vh;
+    z-index: 11;
+    transition: 0.3s all;
+  }
+  .POS-sidebar.open {
+    right: 0;
+  }
+  .POS-sidebar-icon {
+    transition: 0.3s all;
+    right: 0;
+    z-index: 11;
+  }
+}
+@media (max-width: 639px) {
+  .sidebar {
+    position: fixed;
+    left: -83px;
+    transition: 0.3s all;
+  }
+  .sidebar.active {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 12;
+    transition: 0.3s all;
+  }
+  .responsive-sidebar-icon {
+    transition: 0.3s all;
+    left: 0;
+    z-index: 11;
+  }
+  .sidebar.active ~ .responsive-sidebar-icon {
+    position: fixed;
+    left: 78px;
+    transition: 0.3s all;
+  }
+  /* .header-menu {
+    position: absolute;
+    background: #18181b;
+    width: 100%;
+    left: 0;
+    top: 73px;
+    padding: 1rem;
+    transition: 0.3s all;
+    opacity: 0;
+    z-index: -111;
+  }
+  .header-menu.active {
+    top: 73px;
+    z-index: 10;
+    opacity: 1;
+  } */
+  .atm-card {
+    width: 290px;
+  }
+  .action-dropdown .origin-top-right {
+    left: 0;
+    right: auto;
+  }
+
+  /* ------chat---------- */
+  .chatMidSec {
+    height: calc(100vh - 234px);
+    overflow: auto;
+  }
+  .details-sec {
+    height: calc(100vh - 73px);
+  }
+  /*------------- POS------------- */
+  .POS-sidebar {
+    position: absolute;
+    top: 0;
+    right: -1000px;
+    width: 100%;
+    height: 100vh;
+    z-index: 11;
+    transition: 0.3s all;
+  }
+  .POS-sidebar.open {
+    right: 0;
+  }
+  .POS-sidebar-icon {
+    transition: 0.3s all;
+    right: 0;
+    z-index: 11;
+  }
+}

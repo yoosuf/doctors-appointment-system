@@ -1,0 +1,13 @@
+{
+
+    "words": [
+        "DISCOMFIRT",
+        "tsmerge",
+        "githubusercontent",
+        "streetsidesoftware",
+        "vsmarketplacebadge",
+        "visualstudio"
+    ],
+    "ignorePaths": ["node_modules/**", "client/**"]
+
+}

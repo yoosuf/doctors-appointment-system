@@ -1,0 +1,5 @@
+{
+  "recurly": {
+    "invalidCountry": "Please enter valid country name."
+  }
+}

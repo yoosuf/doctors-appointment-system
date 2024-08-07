@@ -1,0 +1,26 @@
+[
+  {
+    "prefix": "PRD",
+    "start_from": 1,
+    "postfix": "",
+    "is_active": true,
+    "total_no": 0,
+    "type": "PRODUCT"
+  },
+  {
+    "prefix": "ORD",
+    "start_from": 1,
+    "postfix": "",
+    "is_active": true,
+    "total_no": 0,
+    "type": "ORDER"
+  },
+  {
+    "prefix": "EVNT",
+    "start_from": 1,
+    "postfix": "",
+    "is_active": true,
+    "total_no": 0,
+    "type": "EVENT"
+  }
+]

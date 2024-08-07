@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .invoice-container {
+            max-width: 100%;
+            margin: auto;
+            padding: 30px;
+            font-size: 16px;
+            line-height: 24px;
+            font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+            color: #000;
+        }
+
+        .invoice-box {
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .invoice-box table {
+            line-height: inherit;
+            text-align: left;
+        }
+
+        .invoice-box table td {
+            vertical-align: top;
+        }
+
+        .invoice-box table tr.top table {
+            border-bottom: 1px solid #000;
+        }
+
+        .invoice-box table tr.top table td.title {
+            font-size: 45px;
+            line-height: 45px;
+            color: #333;
+        }
+
+        .invoice-box table tr.heading {
+            font-size: 14px;
+        }
+
+        .invoice-box table tr.product-list {
+            font-size: 14px;
+        }
+
+        table.product-details td,
+        table.product-details th {
+            border: 1px solid #f1f1f1;
+        }
+
+        /* .product-td {
+              border-bottom: 1px solid #000;
+          } */
+
+        .product-td td {
+            height: 200px;
+        }
+
+        .product-td td:last-child {
+            border: none;
+        }
+
+        .bank-details {
+            font-size: 14px;
+        }
+
+        .bank-details th {
+            border-bottom: 1px solid #000;
+            text-align: left;
+        }
+
+        .final-Amount th {
+            text-align: left;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            margin: 0;
+        }
+
+        /** RTL **/
+        .rtl {
+            direction: rtl;
+            font-family: Tahoma, "Helvetica Neue", "Helvetica", Helvetica, Arial,
+                sans-serif;
+        }
+
+        .rtl table {
+            text-align: right;
+        }
+
+        .rtl table tr td:nth-of-type(2) {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invoice-container" style="
+        max-width: 100%;
+        margin: auto;
+        padding: 0;
+        font-size: 16px;
+        line-height: 24px;
+        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color: #000;
+      ">
+        <div class="invoice-box" style="max-width: 100%">
+            <table cellpadding="0" cellspacing="0" style="
+            line-height: inherit;
+            text-align: left;
+            background-image: url(images/back-logo.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+          ">
+                <tr class="heading" style="font-size: 14px; margin-left: auto; padding: 1.5rem">
+                    <td>
+                        <div>
+                            <table style="
+                    font-size: 11px;
+                    line-height: inherit;
+                    padding: 1rem;
+                    width: 100%;
+                    border-bottom: 1px solid #000;
+                  ">
+                                <tbody>
+                                    <tr>
+                                        <td style="
+                          text-align: left;
+                          vertical-align: top;
+                          float: left;
+                        ">
+                                            <div>
+                                                <img src="<%=serverUrl%>chartImage/logo.svg" style="width: 170px"
+                                                    alt="" />
+                                            </div>
+                                            <p style="font-size: 16px; color: #000">
+                                                <b>Snapcrack The District</b>
+                                            </p>
+                                            <p style="font-size: 14px">
+                                                1070 Lombard St., San Fransisco, CA, 94109
+                                            </p>
+                                            <div>
+                                                <div style="float: left">
+                                                    <img src="<%=serverUrl%>chartImage/call.png"
+                                                        style="float: left; margin: 4px 8px 4px 0" alt="" />
+                                                    <p style="float: left; font-size: 14px">
+                                                        882 255 5665
+                                                    </p>
+                                                </div>
+                                                <div style="float: left; margin-left: 20px">
+                                                    <img src="<%=serverUrl%>chartImage/mail.png"
+                                                        style="float: left; margin: 2px 8px 2px 0" alt="" />
+                                                    <p style="float: left; font-size: 14px">
+                                                        thedisctirct@snapcrack.com
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="head-info">
+                    <td colspan="2" style="vertical-align: top">
+                        <table style="
+                  width: -webkit-fill-available;
+                  border-collapse: collapse;
+                  background: #ffffffc4;
+                  margin-top: 1rem;
+                ">
+                            <tbody style="line-height: inherit; text-align: left; padding: 0 5px">
+                                <tr style="font-size: 14px; width: 100%">
+                                    <td style="vertical-align: top; text-align: left">
+                                        <div style="padding: 0.8rem">
+                                            <p>
+                                                <strong>Regardring
+                                                    : <%= `${data.user.firstName} ${data.user.lastName}` %></strong>
+                                            </p>
+                                            <div style="margin-top: 10px;">
+                                                <p>Date of Birth: <%= data.dob %>
+                                                </p>
+                                                <% if (!_.isEmpty(data.address)) { %>
+                                                    <p>
+                                                        <%= `${data.address.addressLine1 ? data.address.addressLine1
+                                                            : '' }${data.address.addressLine2 ? ' ' +
+                                                            data.address.addressLine2 : '' }` %>
+                                                            <%= data.address.cityId ? ', ' + data.address.cityId.name
+                                                                : '' %>
+                                                                <%= data.address.provinceId ? ', ' +
+                                                                    data.address.provinceId.name : '' %>
+                                                                    <%= data.address.countryId ? ', ' +
+                                                                        data.address.countryId.name : '' %>
+                                                                        <%= data.address.postalCodeId ? ', ' +
+                                                                            data.address.postalCodeId.postalCode : '' %>
+                                                    </p>
+                                                    <% } %>
+                                                        <div style="height: 30px;">
+                                                            <div style="float: left">
+                                                                <img src="<%= serverUrl %>chartImage/call.png"
+                                                                    style="float: left; margin: 4px 8px 4px 0" alt="" />
+                                                                <p style="float: left; font-size: 14px">
+                                                                    <%= data.user.phone %>
+                                                                </p>
+                                                            </div>
+                                                            <div style="float: left; margin-left: 20px">
+                                                                <img src="<%= serverUrl %>chartImage/mail.png"
+                                                                    style="float: left; margin: 2px 8px 2px 0" alt="" />
+                                                                <p style="float: left; font-size: 14px">
+                                                                    <%= data.user.email %>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                            </div>
+                                            <% if (data.type==='SOAP' ) { %>
+                                                <div style="margin-top:18px;">
+                                                    <p style="margin-top: 10px;color:#52525B;">Subjective</p>
+                                                    <p>
+                                                        <%= data.subjective %>
+                                                    </p>
+                                                </div>
+                                                <div style="margin-top:18px;">
+                                                    <p style="margin-top: 10px;color:#52525B;">Objective</p>
+                                                    <p>
+                                                        <%= data.objective %>
+                                                    </p>
+                                                </div>
+                                                <div style="margin-top:18px;">
+                                                    <p style="margin-top: 10px;color:#52525B;">Assestment</p>
+                                                    <p>
+                                                        <%= data.assestment %>
+                                                    </p>
+                                                </div>
+                                                <div style="margin-top:18px;">
+                                                    <p style="margin-top: 10px;color:#52525B;">Plan</p>
+                                                    <p>
+                                                        <%= data.plans %>
+                                                    </p>
+                                                </div>
+                                                <% if (data.chartData.length> 0) { %>
+                                                    <div style="margin-top:18px;">
+                                                        <p style="margin-top: 10px;color:#52525B;">Note</p>
+                                                        <% (data.chartData).forEach(chartItem=> { %>
+                                                            <p><strong>Point <%= chartItem.name %></strong>
+                                                                : <%= chartItem.desc %>
+                                                            </p>
+                                                            <% }); %>
+                                                    </div>
+                                                    <% } %>
+                                                        <% } %>
+                                                            <% if (data.type==='DAILY_INTAKE' ) { %>
+                                                                <div style="margin-top:18px;">
+                                                                    <p style="margin-top: 10px;color:#52525B;">Note</p>
+                                                                    <p>
+                                                                        <%= data.chartData %>
+                                                                    </p>
+                                                                </div>
+                                                                <% } %>
+                                                                    <% if (data.type==='DAILY_INTAKE_NURSE' ) { %>
+                                                                        <div style="margin-top:18px;">
+                                                                            <p style="margin-top: 10px;color:#52525B;">
+                                                                                Blood Pressure</p>
+                                                                            <p>
+                                                                                <%= data.bloodPressure %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div style="margin-top:18px;">
+                                                                            <p style="margin-top: 10px;color:#52525B;">
+                                                                                Systolic(ml)</p>
+                                                                            <p>
+                                                                                <%= data.systolic %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div style="margin-top:18px;">
+                                                                            <p style="margin-top: 10px;color:#52525B;">
+                                                                                Diastolic(ml)</p>
+                                                                            <p>
+                                                                                <%= data.diastolic %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div style="margin-top:18px;">
+                                                                            <p style="margin-top: 10px;color:#52525B;">
+                                                                                Previous Injection/IV</p>
+                                                                            <p>
+                                                                                <%= data.previousInjections %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div style="margin-top:18px;">
+                                                                            <p style="margin-top: 10px;color:#52525B;">
+                                                                                Explain</p>
+                                                                            <p>
+                                                                                <%= data.explain %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div style="margin-top:18px;">
+                                                                            <p style="margin-top: 10px;color:#52525B;">
+                                                                                Previous Injection/IV</p>
+                                                                            <p>
+                                                                                <%= data.previousInjectionMl %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div style="margin-top:18px;">
+                                                                            <p style="margin-top: 10px;color:#52525B;">
+                                                                                Injected</p>
+                                                                            <p>
+                                                                                <%= data.injected %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div style="margin-top:18px;">
+                                                                            <p style="margin-top: 10px;color:#52525B;">
+                                                                                Previous Injections/IV</p>
+                                                                            <p>
+                                                                                <%= data.chartData %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div style="margin-top:18px;">
+                                                                            <p style="margin-top: 10px;color:#52525B;">
+                                                                                Medication Allergy</p>
+                                                                            <p>
+                                                                                <%= data.medicationAllergy %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div style="margin-top:18px;">
+                                                                            <p style="margin-top: 10px;color:#52525B;">
+                                                                                Which Allergy</p>
+                                                                            <p>
+                                                                                <%= data.medicationWhichAllergy %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div style="margin-top:18px;">
+                                                                            <p style="margin-top: 10px;color:#52525B;">
+                                                                                Food Allergy</p>
+                                                                            <p>
+                                                                                <%= data.foodAllergy %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div style="margin-top:18px;">
+                                                                            <p style="margin-top: 10px;color:#52525B;">
+                                                                                Which Allergy</p>
+                                                                            <p>
+                                                                                <%= data.foodWhichAllergy %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div style="margin-top:18px;">
+                                                                            <p style="margin-top: 10px;color:#52525B;">
+                                                                                Other Allergy</p>
+                                                                            <p>
+                                                                                <%= data.otherAllergy %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div style="margin-top:18px;">
+                                                                            <p style="margin-top: 10px;color:#52525B;">
+                                                                                Note</p>
+                                                                            <p>
+                                                                                <%= data.note %>
+                                                                            </p>
+                                                                        </div>
+                                                                        <% } %>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="head-info" style="margin-top: 30px">
+                    <td colspan="2" style="vertical-align: top; padding: 0 1rem 1rem">
+                        <table style="
+                  width: -webkit-fill-available;
+                  border-collapse: collapse;
+                  margin-top: 2rem;
+                ">
+                            <tbody style="line-height: inherit; text-align: left;">
+                                <tr style="font-size: 14px; width: 100%">
+                                    <td style="vertical-align: top; text-align: left">
+                                        <div>
+                                            <% if (data.creator !==undefined) { %>
+                                                <p><strong>
+                                                        <%= `${data.creatorId.fullName}` %>
+                                                    </strong></p>
+                                                <p>Signed on <%= data.signedOn %>
+                                                </p>
+                                                <% } %>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

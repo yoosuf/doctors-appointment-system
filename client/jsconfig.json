@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/widget/*": ["widget/*"],
+      "@/shared/*": ["components/shared/*"],
+      "@/styles/*": ["styles/*"],
+      "@/utils/*": ["utils/*"],
+      "@/images/*": ["public/images/*"],
+      "@/svgs/*": ["public/svgs/*"],
+      "@/api/*": ["api/*"]
+    }
+  }
+}

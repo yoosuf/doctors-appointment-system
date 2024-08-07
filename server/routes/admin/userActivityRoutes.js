@@ -1,0 +1,69 @@
+const express = require("express");
+const router = express.Router();
+const userActivityController = require("../../controller/admin/userActivityController");
+const {
+  authentication,
+  checkPermission,
+  checkPermissionByUser,
+} = require("../../middleware/auth");
+router
+  .route("/create")
+  .post(
+    authentication,
+    userActivityController.addUserActivity
+  );
+router
+  .route("/list")
+  .post(
+    authentication,
+    userActivityController.findAllUserActivity
+  );
+router
+  .route("/:id")
+  .get(
+    authentication,
+    userActivityController.getUserActivity
+  );
+router
+  .route("/count")
+  .post(
+    authentication,
+    userActivityController.getUserActivityCount
+  );
+router
+  .route("/aggregate")
+  .post(
+    authentication,
+    userActivityController.getUserActivityByAggregate
+  );
+router
+  .route("/update/:id")
+  .put(
+    authentication,
+    userActivityController.updateUserActivity
+  );
+router
+  .route("/partial-update/:id")
+  .put(
+    authentication,
+    userActivityController.partialUpdateUserActivity
+  );
+router
+  .route("/softDelete/:id")
+  .put(
+    authentication,
+    userActivityController.softDeleteUserActivity
+  );
+router
+  .route("/addBulk")
+  .post(
+    authentication,
+    userActivityController.bulkInsertUserActivity
+  );
+router
+  .route("/updateBulk")
+  .put(
+    authentication,
+    userActivityController.bulkUpdateUserActivity
+  );
+module.exports = router;

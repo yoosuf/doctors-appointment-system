@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapCrack</title>
+    <style>
+        body{
+            color:#fff;
+        }
+        .main-bg{
+            background-color: #000;
+            background-image: url(./images/main-bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 5rem 5rem 2rem;
+            
+        }
+        .max-w-600{
+            max-width: 600px;
+            margin:0 auto;
+        }
+        .min-h-screen{
+            min-height: 100vh;
+        }
+        .bg-grayLight{
+            background: #18181B;
+            border-radius: 26px;
+        }
+        .w-full{
+            width: 100%;
+        }
+        .h-full{
+            height: 100%;
+        }
+        .block{
+           display: block;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .text-gray-400{
+            color: #71717A;
+        }
+        .confirm-btn{
+            padding:.6rem .8rem;
+             background:#FBD63C;
+            color:#18181B;
+            border-radius:.5rem;
+            border:none; 
+            text-decoration:none;
+            display: inline-block;
+            transition: .3s all;
+        }
+        .confirm-btn:hover{
+             background:#e9ba00;
+        }
+        a{
+            outline:none;
+            text-decoration:none;
+        }
+        .outline-btn{
+            padding:.6rem .8rem;
+             background:transparent;
+            color:#fff;
+            border-radius:.5rem;
+            border:1px solid #3F3F46; 
+            text-decoration:none;
+            display: inline-block;
+            transition: .3s all;
+        }
+        .outline-btn:hover{
+             border:1px solid#e9ba00;
+        }
+        .flex-cen{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gap-2{
+            gap:2rem;
+        }
+        .gap-3{
+            gap:.9rem;
+        }
+        .bg-27272A{
+            background: #27272A;
+        }
+        .w-50{
+            width: 50%;
+        }
+        .flex{
+            display: flex;
+        }
+        .rounded-lg{
+            border-radius: 10px;
+        }
+        .text-sm{
+            font-size:14px;
+        }
+
+        @media(max-width:768px) and (min-width:576px){
+            .bg-grayLight{
+                padding: 2rem 1rem !important;
+            }
+        }
+        @media(max-width:575px){
+            .bg-grayLight{
+                padding: 2rem 1rem !important;
+                border-radius: 0px !important;
+            }
+            .main-bg{
+                padding: 2rem 0rem 2rem;
+            }
+        }
+    </style>
+    
+</head>
+<body style="margin:0;">
+    <div class="min-h-screen main-bg max-w-600">
+        <table class="w-full h-full text-center bg-grayLight" style="padding: 2rem 3rem;">
+            <tbody >
+                <tr class="w-full " style="display:block;">
+                   <div style="padding: 0 2rem;">
+                    <td class="logo " style="display:block;">
+                        <img src="images/header-logo.svg" alt=""/>
+                    </td>
+                    <td  style="display:block;margin-top:2rem;padding: 0rem 4rem;">
+                        <div>
+                            <img src="images/calendar-times-solid.svg" height="50px" alt="">
+                        </div>
+                        <h4 style="margin:.5rem 0;">Thanks Allen Smith!</h4>
+                        <h2 style="margin-top: 0;">Your appointment in SnapCrack Chiropractic – Brickell is Cancelled</h2>
+                    </td>
+                    <td  style="display:block;" style="margin-top:2rem;">
+                        <div class="rounded-lg bg-27272A" style="padding:1rem;display: grid; gap:.9rem;">
+                            <div class="flex" style="text-align: left;">
+                                <div class="w-50">
+                                    <p style="font-size:14px;font-weight:bold;margin:0;">Appointment ID</p>
+                                </div>
+                                <div class="w-50">
+                                    <p class="text-gray-400" style="font-size:14px;margin:0;">AP36658</p>
+                                </div>
+                            </div>
+                            <div class="flex" style="text-align: left;">
+                                <div class="w-50">
+                                    <p style="font-size:14px;font-weight:bold;margin:0;">Appointment Date</p>
+                                </div>
+                                <div class="w-50">
+                                    <p class="text-gray-400" style="font-size:14px;margin:0;">Friday, June 22, 2021, 08.00 AM  to 09.45 AM</p>
+                                </div>
+                            </div>
+                            <div class="flex" style="text-align: left;">
+                                <div class="w-50">
+                                    <p style="font-size:14px;font-weight:bold;margin:0;">Ordered Service</p>
+                                </div>
+                                <div class="w-50">
+                                    <p class="text-gray-400" style="font-size:14px;margin:0;">Service Item 1, Service Item 3</p>
+                                </div>
+                            </div>
+                            <div class="flex" style="text-align: left;">
+                                <div class="w-50">
+                                    <p style="font-size:14px;font-weight:bold;margin:0;">Ordered Product</p>
+                                </div>
+                                <div class="w-50">
+                                    <p class="text-gray-400" style="font-size:14px;margin:0;">Product Name 1, Product Name 2</p>
+                                </div>
+                            </div>
+                            <div class="flex" style="text-align: left;">
+                                <div class="w-50">
+                                    <p style="font-size:14px;font-weight:bold;margin:0;">Appointment Location</p>
+                                </div>
+                                <div class="w-50">
+                                    <p style="font-size:14px;font-weight:bold;margin:0 0 .4rem 0;">SnapCrack Chiropractic – Brickell</p>
+                                    <p class="text-gray-400" style="font-size:14px;margin:0;">1055 Brickell Plaza Miami, FL 33131
+                                        Miami Florida 33131
+                                        United States</p>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td  style="display:block;" style="margin-top:2rem;">
+                        <p class="text-gray-400" style="font-size:14px;margin:1rem 0;">If you are no longer able to make this appointment, please visit your account page to cancel or changes your appointment. Note: you only can cancel appointment before check in.</p>
+                        <div class="gap-3 flex-cen">
+                            <a href="#" class="text-sm confirm-btn">Change My Appointment</a>
+                        </div>
+                        <div class="flex-cen">
+                            <p class="text-gray-400" style="font-size:14px;margin:1rem 0;">Need Any Help?</p>
+                            <a href="#" style="color:#FBD63C;text-decoration:none;margin-left:4px;">Contact Us</a>
+                        </div>
+                    </td>
+                    
+                   </div>
+                </tr> 
+            </tbody>
+        </table>
+        <table class="w-full text-center"  style="margin-top:1rem;">
+            <tr>
+                <td class="gap-2 flex-cen" style="color: #fff;margin-top: 1rem;">
+                    <a href="#">
+                        <img src="images/instagram.svg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="images/twitter.svg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="images/facebook-fill.svg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="images/youtube-fill.svg" alt="">
+                    </a>
+                </td>
+                <td class="text-center" style="display:block;">
+                    <p style="font-size:12px;color:#999; margin-top: 1rem;">Powered by snapcrack.com</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "appointment": {
+    "booked": "You have successfully checked in",
+    "card": "Card not found. Please add card details."
+  }
+}

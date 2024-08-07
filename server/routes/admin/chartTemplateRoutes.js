@@ -1,0 +1,69 @@
+const express = require("express");
+const router = express.Router();
+const chartTemplateController = require("../../controller/admin/chartTemplateController");
+const {
+  checkPermission,
+  checkPermissionByUser,
+  authentication,
+} = require("../../middleware/auth");
+router
+  .route("/create")
+  .post(
+    authentication,
+    chartTemplateController.addChartTemplate
+  );
+router
+  .route("/list")
+  .post(
+    authentication,
+    chartTemplateController.findAllChartTemplate
+  );
+router
+  .route("/:id")
+  .get(
+    authentication,
+    chartTemplateController.getChartTemplate
+  );
+router
+  .route("/count")
+  .post(
+    authentication,
+    chartTemplateController.getChartTemplateCount
+  );
+router
+  .route("/aggregate")
+  .post(
+    authentication,
+    chartTemplateController.getChartTemplateByAggregate
+  );
+router
+  .route("/update/:id")
+  .put(
+    authentication,
+    chartTemplateController.updateChartTemplate
+  );
+router
+  .route("/partial-update/:id")
+  .put(
+    authentication,
+    chartTemplateController.partialUpdateChartTemplate
+  );
+router
+  .route("/softDelete/:id")
+  .put(
+    authentication,
+    chartTemplateController.softDeleteChartTemplate
+  );
+router
+  .route("/addBulk")
+  .post(
+    authentication,
+    chartTemplateController.bulkInsertChartTemplate
+  );
+router
+  .route("/updateBulk")
+  .put(
+    authentication,
+    chartTemplateController.bulkUpdateChartTemplate
+  );
+module.exports = router;

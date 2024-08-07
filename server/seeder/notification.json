@@ -1,0 +1,33 @@
+[
+  {
+    "_id": "60d9846f0312155ca31075e2",
+    "code": "Email Notification",
+    "name": "Email Notification",
+    "description": "Enable the email notification system. This is the master switch for the notification selected below. Only staff and patients that have eneabled notifications on their profile will receive notifications when this is checked",
+    "value": true
+  },
+  {
+    "_id": "60d9846f0312155ca31075e3",
+    "code": "Notification Booked",
+    "name": "Send email notifications when appointment is booked",
+    "description": "booking notifications are sent when appointments are booked by staff or booked online. They are delivered approx 3 minutes after the appointment is booked.",
+    "value": true,
+    "parentId": "60d9846f0312155ca31075e2"
+  },
+  {
+    "_id": "60d9846f0312155ca31075e4",
+    "code": "Notification Cancelled",
+    "name": "Send email notifications when appointment cancelled",
+    "description": "cancellation notifications are sent when appointmenst are cancelled.",
+    "value": true,
+    "parentId": "60d9846f0312155ca31075e2"
+  },
+  {
+    "_id": "60d9846f0312155ca31075e5",
+    "code": "Notification Changed",
+    "name": "Send email notifications when appointment changed",
+    "description": "Change notifications are sent if the start time changes.",
+    "value": true,
+    "parentId": "60d9846f0312155ca31075e2"
+  }
+]

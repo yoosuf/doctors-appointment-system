@@ -1,0 +1,26 @@
+{
+  "apps": [
+    {
+      "name": "client",
+      "cwd": "./client",
+      "script": "npm",
+      "args": "start",
+      "watch": false,
+      "exec_mode": "cluster",
+      "instances": 1,
+      "autorestart": true,
+      "max_memory_restart": "100M"
+    },
+    {
+      "name": "server",
+      "cwd": "./server",
+      "script": "npm",
+      "args": "start",
+      "watch": false,
+      "exec_mode": "cluster",
+      "instances": 1,
+      "autorestart": true,
+      "max_memory_restart": "100M"
+    }
+  ]
+}

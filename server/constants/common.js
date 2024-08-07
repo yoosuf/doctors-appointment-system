@@ -1,0 +1,180 @@
+const { FORGOT_PASSWORD_WITH } = require("../config/authConstant");
+
+const CHART_TEMPLATE_TYPE = {
+  SOAP: "SOAP",
+  DAILY_INTAKE: "DAILY_INTAKE",
+  DAILY_INTAKE_NURSE: "DAILY_INTAKE_NURSE",
+  SOAP_NURSE: "SOAP_NURSE",
+};
+
+const APPOINTMENT_CHART_TYPE = {
+  SOAP: "SOAP",
+  DAILY_INTAKE: "DAILY_INTAKE",
+  DAILY_INTAKE_NURSE: "DAILY_INTAKE_NURSE",
+  SOAP_NURSE: "SOAP_NURSE",
+};
+
+const CHART_VIEWABLE = {
+  EVERYONE: "EVERYONE",
+  CHIRO: "CHIRO",
+};
+
+const SCHEDULE_TYPE = {
+  APPOINTMENT: "APPOINTMENT",
+  EVENT: "EVENT",
+};
+
+const EVENT_STATUS = {
+  OPEN: "OPEN",
+  REGISTRATION_CLOSE: "REGISTRATION_CLOSE",
+  COMPLETED: "COMPLETED",
+  CANCELED: "CANCELED",
+};
+
+const APPOINTMENT_STATUS = {
+  PENDING: "PENDING",
+  WAITING: "WAITING",
+  NO_SHOW: "NO_SHOW",
+  IN_SERVE: "IN_SERVE",
+  COMPLETED: "COMPLETED",
+  CANCELED: "CANCELED"
+};
+
+const WALLET_TYPE = {
+  APPOINTMENT: "APPOINTMENT",
+};
+
+const ORDER_TYPES = {
+  MEMBERSHIP: "membership",
+  PRODUCT: "product",
+  EVENT: "event",
+};
+
+const ROOM_TYPES = {
+  GROUP: "GROUP",
+  SINGLE: "SINGLE",
+};
+const CHECKOUT_TYPES = {
+  PATIENT: "PATIENT",
+  USER: "USER",
+};
+const PAYMENT_TYPES = {
+  CARD: "card",
+  CASH: "cash",
+};
+const SETTING_NO_TYPES = {
+  PRODUCT: "PRODUCT",
+  EVENT: "EVENT",
+  ORDER: "ORDER",
+};
+const SETTING_TYPES = {
+  TAX_CODE: "TAX_CODE",
+};
+
+const ACTIVITY_TRACK_ROUTE = [
+  "client.appointment.create",
+  "client.appointment.getAppointment",
+  "client.appointment.bookAppointment",
+];
+
+const ORDER_STATUS = {
+  PENDING: "PENDING",
+  COMPLETED: "COMPLETED",
+  CANCEL: "CANCEL",
+};
+
+const DASHBOARD_BAR_CHART_TYPE = {
+  HOURLY: "HOURLY",
+  DAILY: "DAILY",
+  WEEKLY: "WEEKLY",
+  MONTHLY: "MONTHLY",
+  YEARLY: "YEARLY",
+};
+
+const INVOICE_STATUS = {
+  PENDING: "PENDING",
+  PAID: "PAID",
+};
+const INVOICE_TYPES = {
+  PRODUCT: "PRODUCT",
+  EVENT: "EVENT",
+  MEMBERSHIP: "MEMBERSHIP",
+};
+
+const NOTE_TYPES = {
+  NOTE: "NOTE",
+  ALERT: "ALERT",
+};
+
+const LOG_STATUS = {
+  PENDING: "PENDING",
+  SENT: "SENT",
+  FAILED: "FAILED",
+  RETRY: "RETRY",
+};
+
+const LOG_TYPE = {
+  MAIL: "MAIL",
+};
+
+const ENV = {
+  DEVELOPMENT: "DEVELOPMENT",
+  STAGING: "STAGING",
+  PRODUCTION: "PRODUCTION",
+};
+
+const ORDER_TYPE = {
+  APPOINTMENT: "appointment",
+  EVENT: "event",
+};
+const OPENSSL_CONF = "/dev/null";
+const PASSWORD = process.env.PASSWORD || "Test@12345";
+
+const DATE_FORMAT = "YYYY-MM-DD";
+const TIMEZONE = process.env.TZ || `UTC`;
+
+const FLAG = {
+  ONE: 1,
+  TWO: 2,
+  THREE: 3,
+};
+const ACTIVITY = {
+  LOGIN_USER: "admin->login",
+  FORGOT_PASSWORD: "admin->forgotPassword",
+};
+const JWT_TOKEN_EXPIRE = "24h";
+const LOGIN_LINK_EXPIRE = "30m";
+
+module.exports = {
+  CHART_TEMPLATE_TYPE,
+  CHART_VIEWABLE,
+  APPOINTMENT_CHART_TYPE,
+  APPOINTMENT_STATUS,
+  ACTIVITY_TRACK_ROUTE,
+  SCHEDULE_TYPE,
+  EVENT_STATUS,
+  WALLET_TYPE,
+  ORDER_TYPES,
+  ROOM_TYPES,
+  CHECKOUT_TYPES,
+  SETTING_NO_TYPES,
+  ORDER_STATUS,
+  DASHBOARD_BAR_CHART_TYPE,
+  SETTING_TYPES,
+  PAYMENT_TYPES,
+  INVOICE_STATUS,
+  INVOICE_TYPES,
+  NOTE_TYPES,
+  LOG_STATUS,
+  LOG_TYPE,
+  ENV,
+  ORDER_TYPE,
+  OPENSSL_CONF,
+  DATE_FORMAT,
+  PASSWORD,
+  FLAG,
+  ACTIVITY,
+  JWT_TOKEN_EXPIRE,
+  LOGIN_LINK_EXPIRE,
+  TIMEZONE,
+};

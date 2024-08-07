@@ -1,0 +1,37 @@
+name: Staging Server CI/CD
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+
+      - name: Execute remote SSH commands and deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.STAGING_HOST }} 
+          username: ${{ secrets.STAGING_USERNAME }}
+          key: ${{ secrets.STAGING_SSH_PRIVATE_KEY }}
+          port: ${{ secrets.STAGING_PORT }}
+          script: |
+            cd /opt/apps/
+            git stash
+            git clean -fd
+            git pull --rebase origin staging 
+            # Execute yarn install for client
+            cd /opt/apps/client
+            yarn install
+            # Execute yarn install for server
+            cd /opt/apps/server
+            yarn install
+            pm2 restart all

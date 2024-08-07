@@ -1,0 +1,34 @@
+[
+
+  {
+    "description": "Order Status",
+    "name": "Order Status",
+    "code": "ORDER_STATUS",
+    "sequence": 1,
+    "isActive": true,
+    "isDefault": false,
+    "subMasters": [
+      {
+        "code": "PENDING",
+        "name": "pending",
+        "sequence": 1,
+        "isActive": true,
+        "isDefault": false
+      },
+      {
+        "code": "COMPLETED",
+        "name": "completed",
+        "sequence": 2,
+        "isActive": true,
+        "isDefault": false
+      },
+      {
+        "code": "CANCEL",
+        "name": "cancel",
+        "sequence": 3,
+        "isActive": true,
+        "isDefault": false
+      }
+    ]
+  }
+]
