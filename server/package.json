@@ -60,7 +60,7 @@
     "qrcode": "1.4.4",
     "recurly": "4.4.0",
     "redis": "3.1.2",
-    "socket.io": "4.3.1",
+    "socket.io": "4.6.2",
     "socketio-file-upload": "0.7.3",
     "speakeasy": "2.0.0",
     "uuid": "8.3.2",
