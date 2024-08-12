@@ -11,7 +11,7 @@
     "@novu/node": "0.13.0",
     "@sendgrid/mail": "^7.7.0",
     "async": "0.9.2",
-    "axios": "0.21.1",
+    "axios": "0.28.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "1.19.0",
     "bull": "4.2.0",
