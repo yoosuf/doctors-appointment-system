@@ -19,7 +19,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@sentry/browser": "^7.93.0",
+    "@sentry/browser": "^7.119.1",
     "concurrently": "^8.2.2",
     "country-telephone-data": "^0.6.3",
     "react-phone-input-2": "^2.15.1",
